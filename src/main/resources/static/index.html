@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en" style="background-color: #222">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Weather</title>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/themes/smoothness/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <style>
+    body {
+        font-family: arial;
+        font-size: 24px;
+        background-color: #222;
+        color: #fff;
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+<p>
+    Click <a href="http://localhost:8080/current" style="color: white">
+    HERE</a> to find out today's weather or set the range
+<form action="http://localhost:8080/range" method="post">
+    <input type="text" size="12" placeholder="Start date" name="start" id="start">
+    <input type="text" size="12" placeholder="End date" name="end" id="end">
+    <button type="submit">Send</button>
+</form>
+</p>
+<script>
+  $(function() {
+    $("#start").datepicker();
+    $("#end").datepicker();
+    $("#start").datepicker("option", "dateFormat", "yy-mm-dd");
+    $("#end").datepicker("option", "dateFormat", "yy-mm-dd");
+  });
+</script>
+</body>
+</html>
